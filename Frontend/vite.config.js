@@ -18,7 +18,13 @@ export default defineConfig({
           if (existsSync(resolve(__dirname, 'robots.txt'))) {
             copyFileSync(resolve(__dirname, 'robots.txt'), resolve(__dirname, 'dist/robots.txt'));
           }
-          console.log('Copied sitemap.xml and robots.txt to dist folder.');
+          if (existsSync(resolve(__dirname, '_redirects'))) {
+            copyFileSync(resolve(__dirname, '_redirects'), resolve(__dirname, 'dist/_redirects'));
+          }
+          if (existsSync(resolve(__dirname, '_headers'))) {
+            copyFileSync(resolve(__dirname, '_headers'), resolve(__dirname, 'dist/_headers'));
+          }
+          console.log('Copied sitemap.xml, robots.txt, _redirects, and _headers to dist folder.');
         } catch (err) {
           console.error('Error copying files:', err);
         }
