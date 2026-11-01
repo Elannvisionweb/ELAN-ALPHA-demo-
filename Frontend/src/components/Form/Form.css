@@ -1,0 +1,161 @@
+.registration-form-cont {
+    color: white;
+    background-color: black;
+    padding-top: 15vh;
+    margin-bottom: 1050px;
+    margin-left: 2vw;
+    height: 100vh;
+}
+
+.registration-form-heading {
+    color: #ffffff;
+    font-size: 4vw;
+    font-weight: 300;
+    padding-bottom: 4vh;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    margin-bottom: 5vh;
+}
+
+.registration-form > input[type="text"], .registration-form > input[type="email"], .registration-form > input[type="password"], .registration-form > input[type="tel"] {
+    width: 30%;
+    padding: 10px;
+    margin: 0.4vh 0;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    background-color: #191919;
+    font-size: 0.8vw;
+    color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+.registration-form > input[type="text"]:focus, .registration-form > input[type="email"]:focus, .registration-form > input[type="password"]:focus, .registration-form > input[type="tel"]:focus {
+    border-color: #af4c4c;
+    outline: none;
+}
+
+.registration-form > input[type="text"]:disabled, .registration-form > input[type="email"]:disabled, .registration-form > input[type="password"]:disabled, .registration-form > input[type="tel"]:disabled {
+    background-color: #e0e0e0;
+    color: #888;
+}
+
+.indented-divs {
+    margin-left: 1vw;
+}
+
+.register-button {
+    background-color: #191919; /* Green background */
+    color: white;              /* White text */
+    margin: 4vh 0 4vh 1vw;
+    width: 10%;
+    padding: 12px 20px;        /* Padding for size */
+    font-size: 1vw;
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+    border: solid #ffffff 1px;
+    border-radius: 5px;        /* Rounded corners */
+
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.register-button:hover {
+    background-color: #ffffff;
+    color: #191919 !important;
+}
+
+.register-button:active {
+    transform: scale(0.98);
+}
+
+
+select[name="competition"] {
+    width: 30%;
+    padding: 12px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin: 0.4vh 0;
+    background-color: #191919;
+    font-size: 0.8vw;
+    color: #ffffff;
+    appearance: none;
+    transition: border-color 0.3s ease;
+}
+
+select[name="competition"]:hover {
+    border-color: #af4c4c;
+}
+
+select[name="competition"]:focus {
+    outline: none;
+    border-color: #af4c4c;
+}
+
+@media screen and (max-width: 992px) {
+    .registration-form-cont {
+        color: white;
+        background-color: black;
+        height: auto;
+        margin: 0;
+        min-height: 100svh;
+        padding: calc(62px + 6vh) 5vw 4rem;
+    }
+
+    .registration-form-heading {
+        color: #ffffff;
+        font-size: clamp(2rem, 10vw, 3rem);
+        padding-bottom: 1.1rem;
+        font-weight: 300;
+    }
+
+    .registration-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+        margin-bottom: 0;
+    }
+
+    .registration-form > input[type="text"], .registration-form > input[type="email"], .registration-form > input[type="password"], .registration-form > input[type="tel"],
+    .registration-form .indented-divs input[type="text"], .registration-form .indented-divs input[type="email"], .registration-form .indented-divs input[type="password"], .registration-form .indented-divs input[type="tel"] {
+        font-size: 1rem;
+        margin: 0.45rem 0;
+        padding: 0.75rem;
+        border: 2px solid #ccc;
+        border-radius: 3px;
+        background-color: #191919;
+        width: 100%;
+    }
+
+    .indented-divs { margin-left: 0; }
+
+    .register-button {
+        font-size: 1rem;
+        margin: 1.2rem 0 0;
+        padding: 0.8rem 1.25rem;
+        width: fit-content;
+    }
+
+
+    .register-button:active {
+        transform: scale(0.8);
+    }
+
+
+    select[name="competition"] {
+        font-size: 1rem;
+        padding: 0.75rem;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        margin: 0.45rem 0;
+        background-color: #191919;
+        color: #ffffff;
+        appearance: none;
+        transition: border-color 0.3s ease;
+        width: 100%;
+    }
+
+}
+

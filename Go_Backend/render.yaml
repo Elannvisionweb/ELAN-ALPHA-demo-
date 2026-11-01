@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: elan-backend
+    env: go
+    rootDir: Go_Backend
+    buildCommand: go build -o bin/server cmd/server/main.go
+    startCommand: ./bin/server
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: DATABASE_URL
+        sync: false
+      - key: SMTP_EMAIL
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: 587

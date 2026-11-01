@@ -1,0 +1,418 @@
+.container {
+  background-color: transparent;
+  color: white;
+  height: auto;
+  padding: 0 2vw;
+  width: 92vw;
+  position: relative;
+}
+
+.hero {
+  border-bottom: rgba(255, 255, 255, 0.45) 0.1vh solid;
+  height: 104vh;
+  position: relative;
+  width: 100%;
+}
+
+.home-bg {
+  background: url("/src/assets/images/20.jpg") no-repeat;
+  background-size: cover;
+  filter: brightness(50%);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: -10;
+}
+
+.hero-text {
+  bottom: 18vh;
+  font-family: "enigma", serif;
+  font-size: 10vw;
+  font-weight: 200;
+  line-height: 0.7;
+  position: absolute;
+}
+
+.eta {
+  font-family: "GALSB", system-ui;
+  font-size: 12vw;
+}
+
+.hero-sub-text {
+  align-items: center;
+  bottom: 2vh;
+  display: flex;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1vw;
+  font-weight: 400;
+  height: min-content;
+  justify-content: space-between;
+  padding-bottom: 6vh;
+  position: absolute;
+  width: 100%;
+}
+
+.elan-text {
+  left: -0.6vw;
+  position: relative;
+}
+
+.register-btn-wrapper {
+  position: absolute;
+  text-decoration: none;
+  right: -31vw;
+  top: 14vh;
+}
+
+.register-btn {
+  background-color: white;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 2vw;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2vh 4vw;
+  transform: skewX(-15deg);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.register-btn:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.4);
+  transform: skewX(-15deg) scale(1.05);
+}
+
+.about {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: rgba(255, 255, 255, 0.45) 0.1vh solid;
+  height: auto;
+  padding: 16vh 0;
+  position: relative;
+  width: 100%;
+}
+
+.about-text {
+  font-size: 1.5vw;
+  font-weight: 300;
+  height: 100%;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 80%;
+}
+
+.gallery {
+  background-color: #000000;
+  border-bottom: rgba(255, 255, 255, 0.45) 0.1vh solid;
+  display: grid;
+  gap: 0.4vh;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  height: 84vw;
+  padding: 0 0 6vw 0;
+  position: relative;
+  width: 88vw;
+}
+
+.gallery-title {
+  font-size: 6vw;
+  font-weight: 300;
+  padding: 6vh 0;
+  position: relative;
+}
+
+.gallery-1 {
+  background: url("/src/assets/home_gallery/1.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-2 {
+  background: url("/src/assets/home_gallery/2.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-3 {
+  background: url("/src/assets/home_gallery/3.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-4 {
+  background: url("/src/assets/home_gallery/4.jpg") no-repeat center;
+  background-size: cover;
+  grid-column: 6 / span 3;
+  grid-row: 1 / span 2;
+}
+
+.gallery-5 {
+  background: url("/src/assets/home_gallery/5.jpg") no-repeat center;
+  background-size: cover;
+  grid-column: 1 / span 4;
+  grid-row: 5 / span 3;
+}
+
+.gallery-6 {
+  background: url("/src/assets/home_gallery/6.jpg") no-repeat center;
+  background-size: cover;
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+}
+
+.gallery-7 {
+  background: url("/src/assets/home_gallery/7.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-8 {
+  background: url("/src/assets/home_gallery/8.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-9 {
+  background: url("/src/assets/home_gallery/9.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-10 {
+  background: url("/src/assets/home_gallery/10.jpg") no-repeat center;
+  background-size: cover;
+  grid-column: 3 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.gallery-11 {
+  background: url("/src/assets/home_gallery/11.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-12 {
+  background: url("/src/assets/home_gallery/12.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-13 {
+  background: url("/src/assets/home_gallery/13.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-14 {
+  background: url("/src/assets/home_gallery/14.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-15 {
+  background: url("/src/assets/home_gallery/15.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-16 {
+  background: url("/src/assets/home_gallery/16.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-17 {
+  background: url("/src/assets/home_gallery/17.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-18 {
+  background: url("/src/assets/home_gallery/18.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-19 {
+  background: url("/src/assets/home_gallery/19.jpg") no-repeat center;
+  background-size: cover;
+  grid-column: 3 / span 3;
+  grid-row: 3 / span 2;
+}
+
+.gallery-20 {
+  background: url("/src/assets/home_gallery/20.jpg") no-repeat center;
+  background-size: cover;
+  grid-column: 8 / span 2;
+  grid-row: 3 / span 2;
+}
+
+.gallery-21 {
+  background: url("/src/assets/home_gallery/21.jpg") no-repeat center;
+  background-size: cover;
+  grid-column: 6 / span 4;
+  grid-row: 5 / span 3;
+}
+
+.gallery-22 {
+  background: url("/src/assets/home_gallery/22.png") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-23 {
+  background: url("/src/assets/home_gallery/23.png") no-repeat center;
+  background-size: cover;
+}
+
+.gallery-24 {
+  background: url("/src/assets/home_gallery/24.png") no-repeat center;
+  background-size: cover;
+}
+
+.sponsors-cont {
+  background-color: #000000;
+  color: white;
+  height: 100vh;
+  padding-top: 10vh;
+  position: relative;
+  width: 92vw;
+}
+
+.sponsor-title {
+  font-size: 6vw;
+  font-weight: 300;
+  left: 2vw;
+  position: relative;
+}
+
+.marquee {
+  position: relative;
+  top: 10vh;
+}
+
+.marquee-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vw;
+  padding: 0vw 0.5vw;
+}
+
+.sponsors-box {
+  align-items: center;
+  background-color: #000000;
+  border: 1px solid #676767;
+  display: flex;
+  height: 30vh;
+  justify-content: center;
+  width: 30vh;
+}
+
+.sponsors-box img {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    overflow: hidden;
+    padding: 0;
+    width: 100vw;
+  }
+
+  .hero {
+    border-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0 5vw;
+  }
+
+  .home-bg {
+    background: url("/src/assets/images/18.jpg") no-repeat;
+    background-size: cover;
+    filter: brightness(50%);
+    position: absolute;
+    z-index: -10;
+  }
+
+  .hero-text {
+    font-size: 15vw;
+    line-height: 0.7;
+    top: 18vh;
+    position: relative;
+  }
+
+  .eta {
+    font-family: "GALSB", system-ui;
+    font-size: 18vw;
+  }
+
+  .hero-sub-text {
+    font-size: 2vh;
+    position: relative;
+    top: 20vh;
+  }
+
+  .about-mobile {
+    font-size: 2vh;
+    position: relative;
+    top: 30vh;
+  }
+
+  .register-btn-wrapper {
+    right: 5vw;
+    left: auto;
+    top: 32vh;
+    position: absolute;
+    width: auto;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 10;
+  }
+
+  .register-btn {
+    font-size: clamp(16px, 6vw, 28px);
+    padding: clamp(1vh, 2vh, 2.5vh) clamp(4vw, 6vw, 8vw);
+    white-space: nowrap;
+    min-width: max-content;
+    font-weight: 600;
+    pointer-events: none;
+    cursor: pointer;
+  }
+
+  .register-btn-wrapper:active {
+    transform: scale(0.95);
+  }
+
+  .gallery {
+    background-color: black;
+    gap: 0.6vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 200vh;
+    padding: 0 5vw 10vw 5vw;
+    width: 100%;
+  }
+
+  .gallery-item {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .gallery-title {
+    background-color: black;
+    padding: 3vh 5vw;
+    width: 100%;
+  }
+
+  .sponsors-cont {
+    height: 35vh;
+    padding: 5vh 5vw 0 5vw;
+    width: 100vw;
+  }
+
+  .sponsor-title {
+    left: 0;
+  }
+
+  .marquee {
+    top: 5vh;
+  }
+
+  .sponsors-box {
+    height: 10vh;
+    overflow: hidden;
+    width: 10vh;
+  }
+}

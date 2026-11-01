@@ -1,0 +1,430 @@
+/* ==========================================================================
+   Landing page — layered composition
+   Curtain tiles, clown and signpost are separate layers, so the hero fills any
+   viewport cleanly. Every overlay is positioned in % of its own layer, which
+   keeps it locked to the painted props at any size.
+   ========================================================================== */
+
+.cv-landing {
+  background: #7a0b1d;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.cv-sr {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* ---------- Hero ---------- */
+.cv-hero {
+  background-position: center top;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  height: calc(100vh - clamp(74px, 5.8vw, 98px));
+  margin-top: clamp(74px, 5.8vw, 98px);
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* ---------- Wordmark ---------- */
+.cv-hero-copy {
+  left: 3.2%;
+  position: absolute;
+  top: 10%;
+  width: 42.5%;
+  z-index: 3;
+}
+
+.cv-wordmark {
+  display: block;
+  filter: drop-shadow(0 4px 0 rgba(40, 4, 10, 0.65))
+    drop-shadow(0 0 26px rgba(0, 0, 0, 0.45));
+  width: 100%;
+}
+
+.cv-wordmark-date {
+  display: block;
+  filter: drop-shadow(0 3px 0 rgba(40, 4, 10, 0.65))
+    drop-shadow(0 0 18px rgba(0, 0, 0, 0.4));
+  margin-top: 3.8%;
+  width: 53%;
+}
+
+/* ---------- Clown ---------- */
+.cv-clown {
+  bottom: 0;
+  display: block;
+  height: 52%;
+  left: 5.5%;
+  position: absolute;
+  width: auto;
+  z-index: 2;
+}
+
+/* ---------- Signpost ---------- */
+.cv-post {
+  height: 91%;
+  position: absolute;
+  right: 4.8%;
+  top: 4.5%;
+  z-index: 2;
+}
+
+.cv-post-img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+/* live digits, seated in the blanked slot on the marquee board */
+.cv-days {
+  align-items: center;
+  color: #efd6c0;
+  display: flex;
+  font-family: var(--cv-count-font);
+  font-size: calc((100vh - 72px) * 0.081);
+  height: 11.71%;
+  justify-content: center;
+  left: 33.79%;
+  line-height: 1;
+  position: absolute;
+  text-shadow: 0 0 16px rgba(255, 212, 94, 0.45);
+  top: 9.86%;
+  width: 24.7%;
+}
+
+/* ---------- Sign hotspots (measured from the artwork) ---------- */
+.cv-sign {
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  transition: transform 0.18s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.18s ease;
+}
+
+.cv-sign--about {
+  cursor: pointer;
+  height: 14.8%;
+  left: 5.1%;
+  top: 41.2%;
+  width: 81.5%;
+}
+
+.cv-sign--about:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 212, 94, 0.7));
+  transform: translateX(8px) scale(1.02);
+}
+
+.cv-sign--about:focus-visible {
+  box-shadow: 0 0 0 3px var(--cv-gold);
+  outline: none;
+}
+
+.cv-sign--theme {
+  height: 15.8%;
+  left: 16.8%;
+  top: 59.4%;
+  width: 77.1%;
+}
+
+.cv-sign--pronite {
+  height: 15.3%;
+  left: 7.9%;
+  top: 77.2%;
+  width: 88.5%;
+}
+
+.cv-sign--locked {
+  cursor: default;
+}
+
+/* the visible label only appears in the stacked mobile layout */
+.cv-sign-label {
+  display: none;
+}
+
+.cv-sign-soon {
+  background: var(--cv-maroon-ink);
+  border: 1px solid var(--cv-gold-dk);
+  color: var(--cv-gold);
+  font-family: var(--cv-sans);
+  font-size: 0.6rem;
+  left: 50%;
+  letter-spacing: 0.16em;
+  opacity: 0;
+  padding: 0.3rem 0.6rem;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.cv-sign--locked:hover .cv-sign-soon {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   About ticket overlay
+   ========================================================================== */
+
+.cv-overlay {
+  align-items: center;
+  animation: cvFade 0.22s ease both;
+  backdrop-filter: blur(3px);
+  background: rgba(25, 2, 8, 0.72);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 4vh 3vw;
+  position: fixed;
+  z-index: 1200;
+}
+
+@keyframes cvFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cv-ticket-stage {
+  animation: cvTicketIn 0.34s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+  aspect-ratio: 1869 / 719;
+  filter: drop-shadow(0 26px 60px rgba(0, 0, 0, 0.65));
+  max-height: 88vh;
+  max-width: 1280px;
+  position: relative;
+  width: 100%;
+}
+
+@keyframes cvTicketIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cv-ticket-art {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.cv-ticket-title {
+  color: #4a0d16;
+  font-family: var(--cv-display);
+  font-size: clamp(0.95rem, 2.75vw, 2.5rem);
+  left: 5.8%;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  margin: 0;
+  position: absolute;
+  top: 11%;
+  text-transform: uppercase;
+}
+
+.cv-ticket-body {
+  color: #35151a;
+  font-family: var(--cv-serif);
+  font-size: clamp(0.56rem, 1.17vw, 1.08rem);
+  left: 5.8%;
+  line-height: 1.62;
+  margin: 0;
+  position: absolute;
+  top: 28.5%;
+  width: 55%;
+}
+
+.cv-ticket-back {
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 10.5%;
+  left: 3.7%;
+  position: absolute;
+  top: 79.5%;
+  transition: filter 0.16s ease, transform 0.16s ease;
+  width: 10.5%;
+}
+
+.cv-ticket-back:hover {
+  filter: drop-shadow(0 0 14px rgba(255, 212, 94, 0.7));
+  transform: translateY(-2px);
+}
+
+.cv-ticket-back:focus-visible {
+  box-shadow: 0 0 0 3px var(--cv-gold);
+  outline: none;
+}
+
+/* ==========================================================================
+   Tablet — pull the props in so nothing collides
+   ========================================================================== */
+@media screen and (max-width: 1100px) {
+  .cv-hero-copy {
+    top: 10%;
+    width: 46%;
+  }
+
+  .cv-clown {
+    height: 44%;
+    left: 3%;
+  }
+
+  .cv-post {
+    height: 84%;
+    right: 3%;
+    top: 8%;
+  }
+}
+
+/* ==========================================================================
+   Phone — stack the hero; the painted props are too small to read side by side
+   ========================================================================== */
+@media screen and (max-width: 820px) {
+  .cv-hero {
+    align-items: center;
+    background-size: auto 100%;
+    display: flex;
+    flex-direction: column;
+    /* The desktop artwork is side-by-side.  On a phone it needs to read as
+       one compact poster instead of becoming a multi-screen stack. */
+    height: max(calc(100svh - 62px), 540px);
+    margin-top: 62px;
+    min-height: 0;
+    padding: clamp(1rem, 4svh, 2.4rem) 5vw 1rem;
+  }
+
+  .cv-hero-copy {
+    left: auto;
+    position: static;
+    top: auto;
+    width: min(84vw, 370px);
+  }
+
+  .cv-wordmark-date {
+    margin: 2.2% auto 0;
+    width: 51%;
+  }
+
+  .cv-post {
+    height: auto;
+    margin-top: 0.7svh;
+    order: 3;
+    position: static;
+    right: auto;
+    top: auto;
+    width: min(48vw, 205px);
+  }
+
+  .cv-post-img {
+    height: auto;
+    width: 100%;
+  }
+
+  .cv-days {
+    font-size: min(9vw, 34px);
+  }
+
+  .cv-clown {
+    bottom: auto;
+    height: auto;
+    left: auto;
+    margin-top: 1.8svh;
+    order: 2;
+    position: static;
+    width: min(48vw, 200px);
+  }
+
+  .cv-sign-soon {
+    display: none;
+  }
+
+  .cv-ticket-stage {
+    aspect-ratio: auto;
+    background: var(--cv-parchment);
+    border: 3px solid var(--cv-red-deep);
+    border-radius: 10px;
+    max-height: 86vh;
+    overflow-y: auto;
+    padding: 2rem 1.6rem;
+  }
+
+  .cv-ticket-art {
+    display: none;
+  }
+
+  .cv-ticket-title,
+  .cv-ticket-body {
+    position: static;
+    width: auto;
+  }
+
+  .cv-ticket-title {
+    font-size: 1.5rem;
+  }
+
+  .cv-ticket-body {
+    font-size: 0.95rem;
+    margin-top: 1.2rem;
+  }
+
+  .cv-ticket-back {
+    background: var(--cv-red-deep);
+    height: auto;
+    margin-top: 1.6rem;
+    padding: 0.7rem 1.4rem;
+    position: static;
+    width: auto;
+  }
+
+  .cv-ticket-back::after {
+    color: var(--cv-cream);
+    content: "Back";
+    font-family: var(--cv-display);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
+
+/* Keep the whole illustrated composition balanced on the narrowest phones. */
+@media screen and (max-width: 380px) {
+  .cv-hero {
+    height: max(calc(100svh - 62px), 500px);
+    padding-top: 0.9rem;
+  }
+
+  .cv-post { width: min(46vw, 180px); }
+  .cv-clown { width: min(46vw, 175px); }
+}
+
+@media screen and (min-width: 992px) {
+  .cv-sign--about,
+  .cv-ticket-back {
+    cursor: none !important;
+  }
+}

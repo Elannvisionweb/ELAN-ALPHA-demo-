@@ -1,0 +1,160 @@
+.team {
+    background: #000000;
+    color: #717171;
+    height: auto;
+    padding: 15vh 2vw 12vh 2vw;
+    position: relative;
+    width: 92vw;
+}
+
+.team-page-title {
+    color: #ffffff;
+    font-size: 4vw;
+    font-weight: 300;
+    padding-bottom: 4vh;
+}
+
+.team-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 15vh;
+    height: auto;
+    position: relative;
+    width: 100%;
+}
+
+.team-inner {
+    display: flex;
+    height: auto;
+    position: relative;
+    width: 100%;
+
+}
+
+.team-title {
+    font-size: 1.5vw;
+    height: 10vh;
+    position: sticky;
+    top: 15vh;
+    width: 20%;
+}
+
+.team-head-cont {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+}
+
+.team-coord-cont {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 5vh;
+    width: 100%;
+}
+
+.person-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    justify-content: center;
+    width: 25%;
+}
+
+.person-card-img {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 60%;
+}
+
+.person-card-img img {
+    height: 70%;
+    object-fit: cover;
+    width: 70%;
+}
+
+.person-card-name {
+    color: #ffffff;
+    display: flex;
+    font-size: 1vw;
+    height: 10%;
+    justify-content: center;
+    width: 100%;
+}
+
+.person-card-position {
+    display: flex;
+    font-size: 1vw;
+    height: 10%;
+    justify-content: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+    .team {
+        padding: 15vh 5vw 12vh 5vw;
+        width: 100vw;
+    }
+
+    .team-page-title {
+        font-size: 7vw;
+    }
+
+    .team-cont {
+        flex-direction: column;
+        gap: 5vh;
+    }
+
+    .team-inner {
+        flex-direction: column;
+    }
+
+    .team-title {
+        font-size: 7vw;
+        height: max-content;
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+
+    .team-coord-cont {
+        gap: 5vh;
+    }
+
+    .person-card {
+        flex-direction: column;
+        height: 40vh;
+        width: 100%;
+    }
+
+    .person-card-img {
+        height: 100%;
+        width: 60%;
+    }
+
+    .person-card-img img {
+        height: 70%;
+        width: 70%;
+    }
+
+    .person-card-name {
+        font-size: 5vw;
+        height: 10%;
+        width: 100%;
+    }
+
+    .person-card-position {
+        font-size: 4vw;
+        height: fit-content;
+        width: 100%;
+    }
+}
+
+
+

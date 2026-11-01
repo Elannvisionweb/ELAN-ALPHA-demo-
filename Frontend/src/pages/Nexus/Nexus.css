@@ -1,0 +1,185 @@
+.nexus-cont {
+    height: auto;
+    width: 92vw;
+    padding: 15vh 2vw 1vh 2vw;
+    color: white;
+}
+
+.nexus-bg-cont {
+    background: url("/src/assets/images/18.jpg") no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    filter: brightness(23%);
+    z-index: -10;
+}
+
+.nexus-title {
+    color: #ffffff;
+    margin-top: 12vh;
+    font-size: 20vw;
+    font-weight: 300;
+    font-family: "GALSB", system-ui;
+}
+
+.nexus-description {
+    width: 65%;
+    color: #a1a1a1;
+    font-size: 1.2vw;
+}
+
+.nexus-reg-link {
+    font-size: 0.9vw;
+    margin-bottom: 5vh;
+    margin-top: 1vh;
+}
+
+.event-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-heading {
+    margin: 2vh 0 1vh 0;
+    font-size: 3vw;
+}
+
+.details-div {
+    margin: 0 0 6vh 0;
+    font-size: 0.9vw;
+}
+
+.event-day-date {
+    font-size: 1.5vw;
+    margin: 0 0 2vh 0;
+}
+
+.event-day {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+}
+
+
+
+.event-post {
+    width: 27%;
+}
+
+.event-name {
+    font-size: 1.1vw;
+    margin-bottom: 0.1vh;
+}
+
+
+
+.event-time {
+    font-size: 0.9vw;
+}
+
+.event-venue {
+    font-size: 0.9vw;
+}
+
+.event-desc {
+    color: #a1a1a1;
+    font-size: 1.1vw;
+    margin: 1vh 0 6vh 0;
+}
+
+@media screen and (max-width: 992px) {
+    .nexus-cont {
+        min-height: 100svh;
+        width: 100%;
+        padding: calc(62px + 7vh) 5vw 4rem;
+        color: white;
+    }
+
+    .nexus-bg-cont {
+        background-position: center;
+        background-size: cover;
+        height: 100svh;
+        position: fixed;
+    }
+
+    .nexus-title {
+        color: #ffffff;
+        margin-top: 0;
+        font-size: clamp(4.25rem, 20vw, 7.5rem);
+        font-weight: 300;
+        font-family: "GALSB", system-ui;
+    }
+
+    .nexus-description {
+        width: 100%;
+        color: #a1a1a1;
+        font-size: clamp(1rem, 4.2vw, 1.2rem);
+        line-height: 1.55;
+    }
+
+    .nexus-reg-link {
+        font-size: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 5vh;
+    }
+
+    .event-cont {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .event-heading {
+        margin: 0 0 1vh 0;
+        font-size: 10vw;
+    }
+
+    .details-div {
+        margin: 0 0 6vh 0;
+        font-size: 3.5vw;
+    }
+
+    .event-day-date {
+        margin: 0 0 2vh 0;
+        font-size: 6vw;
+    }
+
+    .event-day {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5vw;
+    }
+
+
+
+
+    .event-post {
+        width: 100%;
+    }
+
+    .event-name {
+        font-size: 5vw;
+        margin-bottom: 0.1vh;
+    }
+
+
+
+    .event-time {
+        font-size: 3.5vw;
+    }
+
+    .event-venue {
+        font-size: 3.5vw;
+    }
+
+
+    .event-desc {
+        color: #a1a1a1;
+        font-size: 3vw;
+    }
+
+}
+
+
+

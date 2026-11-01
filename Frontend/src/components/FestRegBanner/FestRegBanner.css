@@ -1,0 +1,415 @@
+/* ✅ Base Banner */
+.quest-banner {
+  position: absolute;
+  top: clamp(10vh, 12vh, 14vh);
+  left: clamp(54vw, 58vw, 61vw);
+  width: auto;
+  height: auto;
+  padding: clamp(12px, 1.5vw, 14px) clamp(22px, 2.5vw, 26px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: clamp(16px, 2vw, 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-family: "enigma", sans-serif;
+  z-index: 20;
+  transition: all 0.4s ease;
+  gap: 0px;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(15px);
+}
+
+.quest-banner:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: clamp(10px, 1.5vw, 14px);
+  padding: clamp(14px, 1.8vw, 18px) clamp(24px, 2.8vw, 28px);
+  backdrop-filter: blur(20px);
+}
+
+/* Fest Registration Title */
+.fest-reg-title {
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  font-family: inherit;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+/* ✅ Shared transitions */
+.fest-reg-title,
+.quest-text,
+.quest-arrow {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ✅ Text default (hidden) */
+.quest-text {
+  font-size: clamp(11px, 1.3vw, 13px);
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.quest-banner:hover .quest-text {
+  opacity: 1;
+  max-height: 100px;
+}
+
+/* ✅ Arrow (paired with text) */
+.quest-arrow {
+  width: clamp(30px, 4vw, 40px);
+  height: clamp(16px, 2vw, 20px);
+  opacity: 0;
+  /* hidden by default */
+  transform: translateX(-4px);
+}
+
+.quest-banner:hover .quest-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Mobile View (below 768px) */
+@media (max-width: 767px) {
+  .quest-banner {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 80% !important;
+    margin: 10vh auto -10vh auto !important;
+    display: flex !important;
+    z-index: 20 !important;
+  } 
+
+  .quest-banner:hover {
+    transform: none !important;
+  }
+
+  .fest-reg-title {
+    font-size: clamp(13px, 4vw, 15px);
+    white-space: normal;
+  }
+
+  .quest-text {
+    font-size: clamp(11px, 3.5vw, 13px);
+    white-space: normal;
+  }
+
+  .quest-arrow {
+    width: clamp(28px, 8vw, 36px);
+    height: clamp(14px, 4vw, 18px);
+  }
+}
+
+/* Modal Styles */
+.fest-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(5px) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 1000 !important;
+  animation: fadeIn 0.3s ease !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fest-modal {
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.98) 0%, rgba(0, 0, 0, 0.98) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  padding: 3rem !important;
+  max-width: 420px !important;
+  width: 90% !important;
+  position: relative !important;
+  animation: slideUp 0.3s ease !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fest-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+  border-radius: 50%;
+}
+
+.fest-modal-close:hover {
+  color: #fff;
+  transform: rotate(90deg);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fest-modal-title {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin: 0;
+}
+
+.fest-modal-description {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.fest-modal-form {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  gap: 1rem !important;
+}
+
+.fest-modal-input {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  padding: 0.875rem 1.25rem !important;
+  color: #fff !important;
+  font-family: "Hanken Grotesk", sans-serif !important;
+  font-size: 0.9375rem !important;
+  font-weight: 300 !important;
+  transition: border 0.3s ease, background 0.3s ease, box-shadow 0.3s ease !important;
+  outline: none !important;
+  width: 80% !important;
+  box-sizing: border-box !important;
+}
+
+.fest-modal-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 300;
+}
+
+.fest-modal-input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.03);
+}
+
+.fest-modal-submit {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 2.5rem !important;
+  color: #fff !important;
+  font-family: "Hanken Grotesk", sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 60% !important;
+}
+
+.fest-modal-submit:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.fest-modal-submit:active {
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+.fest-modal-submit:disabled {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+}
+
+.fest-modal-input:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/* Submit Button Content */
+.submit-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+/* Spinner */
+.spinner {
+  width: 16px !important;
+  height: 16px !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-top: 2px solid #fff !important;
+  border-radius: 50% !important;
+  animation: spin 0.8s linear infinite !important;
+  display: inline-block !important;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Response Modal */
+.fest-response-modal {
+  background: linear-gradient(135deg, rgba(15, 15, 15, 0.98) 0%, rgba(0, 0, 0, 0.98) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  padding: 2.5rem !important;
+  max-width: 450px !important;
+  width: 90% !important;
+  position: relative !important;
+  animation: slideUp 0.3s ease !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(10px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  text-align: center !important;
+}
+
+.response-icon {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.success-icon {
+  background: rgba(76, 175, 80, 0.1) !important;
+  border: 2px solid rgba(76, 175, 80, 0.3) !important;
+}
+
+.success-icon svg {
+  color: #4caf50 !important;
+  stroke: #4caf50 !important;
+}
+
+.error-icon {
+  background: rgba(244, 67, 54, 0.1) !important;
+  border: 2px solid rgba(244, 67, 54, 0.3) !important;
+}
+
+.error-icon svg {
+  color: #f44336 !important;
+  stroke: #f44336 !important;
+}
+
+.response-title {
+  font-family: "Hanken Grotesk", sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  color: #fff !important;
+  margin: 0 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.response-message {
+  font-family: "Hanken Grotesk", sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.response-message a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: underline !important;
+}
+
+.response-ok-button {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 3rem !important;
+  color: #fff !important;
+  font-family: "Hanken Grotesk", sans-serif !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-top: 0.5rem !important;
+}
+
+.response-ok-button:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+.response-ok-button:active {
+  transform: translateY(0) !important;
+}

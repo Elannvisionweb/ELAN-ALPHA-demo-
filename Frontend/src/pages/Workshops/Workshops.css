@@ -1,0 +1,468 @@
+.workshops {
+    background: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 16vh 4vw 12vh 4vw;
+    width: 92vw;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+.workshops-hero {
+    margin-bottom: 3vh;
+}
+
+.workshop-title {
+    color: #ffffff;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 0.8rem 0;
+}
+
+.workshops-tagline {
+    color: #888894;
+    font-size: clamp(0.95rem, 1.2vw, 1.25rem);
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Intro Layout: 2-column on desktop */
+.workshops-intro-layout {
+    display: grid;
+    grid-template-columns: 1.7fr 1.1fr;
+    gap: 3vw;
+    align-items: stretch;
+    margin-top: 3.5vh;
+    margin-bottom: 7vh;
+}
+
+.workshops-intro-text p {
+    color: #9c9ca4;
+    font-size: clamp(0.95rem, 1.05vw, 1.12rem);
+    line-height: 1.8;
+    margin: 0 0 1.2rem 0;
+}
+
+.workshops-intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Accommodation Callout Card */
+.workshops-accommodation-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease;
+}
+
+.workshops-accommodation-card:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.accommodation-card__tag {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #00e5ff;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.accommodation-card__title {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0 0 0.6rem 0;
+    letter-spacing: -0.01em;
+}
+
+.accommodation-card__desc {
+    color: #888894;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 1.4rem 0;
+}
+
+.accommodation-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0.75rem 1.4rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease;
+    align-self: flex-start;
+}
+
+.accommodation-btn:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+.btn-arrow {
+    transition: transform 0.25s ease;
+}
+
+.accommodation-btn:hover .btn-arrow {
+    transform: translate(2px, -2px);
+}
+
+/* Upcoming Workshops Section Header */
+.workshops-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.8vh;
+    margin-bottom: 4.5vh;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.workshop-section-title {
+    color: #ffffff;
+    font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+}
+
+.workshop-section-badge {
+    font-size: 0.75rem;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: #888894;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* Workshops Grid: 2 Cards Side-by-Side */
+.workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.8vw;
+    align-items: stretch;
+}
+
+/* Workshop Card */
+.workshop-card {
+    background: #0d0d11;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.35s ease, 
+                box-shadow 0.35s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.workshop-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 229, 255, 0.08);
+}
+
+/* Card Media (Poster) */
+.workshop-card__media {
+    position: relative;
+    width: 100%;
+    background: #050508;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.workshop-card__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.workshop-card:hover .workshop-card__media img {
+    transform: scale(1.02);
+}
+
+.workshop-card__floating-domain {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Content */
+.workshop-card__content {
+    padding: 2rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Meta Bar */
+.workshop-card__meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+}
+
+.workshop-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    color: #d0d0d8;
+    font-weight: 500;
+}
+
+.workshop-meta-pill svg {
+    color: #00e5ff;
+    flex-shrink: 0;
+}
+
+/* Title & Subtitle */
+.workshop-card__title {
+    font-size: clamp(1.28rem, 1.55vw, 1.65rem);
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+}
+
+.workshop-card__title a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.workshop-card__title a:hover {
+    color: #00e5ff;
+}
+
+.workshop-card__subtitle {
+    font-size: 0.86rem;
+    color: #828290;
+    margin-bottom: 1.3rem;
+    line-height: 1.45;
+}
+
+/* Description */
+.workshop-card__description {
+    color: #b0b0bc;
+    font-size: 0.94rem;
+    line-height: 1.65;
+    margin: 0 0 1.6rem 0;
+}
+
+/* Highlights Box */
+.workshop-card__highlights-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.8rem;
+}
+
+.highlights-box-title {
+    font-size: 0.68rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #6a6a78;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 0.86rem;
+    color: #c4c4cc;
+    line-height: 1.45;
+}
+
+.highlight-bullet {
+    color: #00e5ff;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    flex-shrink: 0;
+}
+
+/* Card Footer */
+.workshop-card__footer {
+    margin-top: auto;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.workshop-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #888894;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.contacts-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: #727280;
+    font-weight: 600;
+}
+
+.contacts-label svg {
+    color: #00e5ff;
+}
+
+.contacts-list {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.contact-item {
+    color: #b0b0b8;
+}
+
+.contact-phone-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.contact-phone-link:hover {
+    color: #00e5ff;
+    text-decoration: underline;
+}
+
+.contact-separator {
+    color: #4a4a55;
+    font-size: 0.7rem;
+}
+
+/* Register on Unstop CTA */
+.workshop-register-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #ffffff;
+    color: #000000;
+    padding: 0.85rem 1.6rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1);
+}
+
+.workshop-register-btn:hover {
+    background: #00e5ff;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 229, 255, 0.35);
+}
+
+.workshop-register-btn svg {
+    transition: transform 0.25s ease;
+}
+
+.workshop-register-btn:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .workshops {
+        padding: 14vh 5vw 10vh 5vw;
+        width: 100vw;
+    }
+
+    .workshop-title {
+        font-size: 3.2rem;
+    }
+
+    .workshops-intro-layout {
+        grid-template-columns: 1fr;
+        gap: 3vh;
+        margin-bottom: 5vh;
+    }
+
+    .workshops-accommodation-card {
+        padding: 1.5rem;
+    }
+
+    .accommodation-btn {
+        align-self: stretch;
+        justify-content: center;
+    }
+
+    .workshops-grid {
+        grid-template-columns: 1fr;
+        gap: 4vh;
+    }
+
+    .workshop-card__content {
+        padding: 1.5rem;
+    }
+}

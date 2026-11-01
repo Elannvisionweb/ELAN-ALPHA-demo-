@@ -1,0 +1,84 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Backend (Node.js)
+Backend/node_modules/
+Backend/dist/
+Backend/logs/
+Backend/*.log
+Backend/.env
+
+# Frontend (React/Vite)
+Frontend/node_modules/
+Frontend/dist/
+Frontend/dist-ssr/
+Frontend/build/
+Frontend/.vite/
+Frontend/.env
+Frontend/.env.local
+Frontend/.env.production
+Frontend/.env.development
+
+# Go Backend
+Go_Backend/.env
+Go_Backend/tmp/
+Go_Backend/bin/
+Go_Backend/*.exe
+Go_Backend/*.exe~
+Go_Backend/*.dll
+Go_Backend/*.so
+Go_Backend/*.dylib
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.claude/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Test coverage
+coverage/
+*.cover
+.coverage
+.pytest_cache/
+
+# Temporary files
+tmp/
+temp/
+temptemp
+*.tmp
+*.bak
+*.swp
+*~
+

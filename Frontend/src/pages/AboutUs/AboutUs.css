@@ -1,0 +1,418 @@
+/* ==========================================================================
+   About Us & Domain Leadership Stylesheet
+   Theme: Authentic Elan & nVision IIT Hyderabad Monochrome Minimalist System
+   Matches: Home, Competitions, Accommodation, and Team Pages
+   ========================================================================== */
+
+.about-page {
+  background-color: #000000;
+  color: #717171;
+  min-height: 100vh;
+  padding: 14vh 4vw 8vh 4vw;
+  width: 92vw;
+  position: relative;
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= HEADER SECTION ================= */
+.about-header {
+  align-items: flex-end;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5vh;
+  margin-top: 2vh;
+  padding-bottom: 3vh;
+}
+
+.about-title {
+  color: #ffffff;
+  font-family: "enigma", serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.about-header-meta {
+  color: #717171;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* ================= MAIN SPLIT LAYOUT ================= */
+.about-layout {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 4vw;
+  align-items: start;
+}
+
+/* ================= LEFT SIDEBAR (DOMAINS) ================= */
+.about-sidebar {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  position: sticky;
+  top: 14vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-sidebar-label {
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid #1a1a1a;
+  color: #4a4a4a;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.about-domains-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 68vh;
+  overflow-y: auto;
+}
+
+.about-domains-list::-webkit-scrollbar {
+  width: 3px;
+}
+.about-domains-list::-webkit-scrollbar-thumb {
+  background: #222222;
+}
+
+.domain-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #141414;
+  color: #717171;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.4rem;
+  text-align: left;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.domain-tab-index {
+  color: #444444;
+  font-size: 0.75rem;
+  font-family: monospace;
+  transition: color 0.2s ease;
+}
+
+.domain-tab-name {
+  flex-grow: 1;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.domain-tab:hover {
+  background: #111111;
+  color: #ffffff;
+}
+
+.domain-tab:hover .domain-tab-index {
+  color: #888888;
+}
+
+.domain-tab.active {
+  background: #141414;
+  color: #ffffff;
+  border-left: 2px solid #ffffff;
+  font-weight: 500;
+}
+
+.domain-tab.active .domain-tab-index {
+  color: #ffffff;
+}
+
+/* ================= RIGHT DISPLAY CONTENT ================= */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Domain Header Block */
+.domain-info-block {
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 2.2rem;
+}
+
+.domain-info-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.domain-title {
+  color: #ffffff;
+  font-family: "enigma", serif;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.domain-heads-badge {
+  color: #4a4a4a;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.domain-tagline {
+  color: #8a8a8a;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 0.8rem 0;
+  letter-spacing: 0.02em;
+}
+
+.domain-desc {
+  color: #717171;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 760px;
+}
+
+/* Heads Grid Section */
+.heads-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heads-section-title {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.heads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Head Card */
+.head-card {
+  background: #080808;
+  border: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.head-card:hover {
+  border-color: #333333;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+.head-photo-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #000000;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.head-photo-black {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.head-placeholder-icon {
+  width: 52px;
+  height: 52px;
+  color: #1a1a1a;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.head-card:hover .head-placeholder-icon {
+  color: #2e2e2e;
+  transform: scale(1.06);
+}
+
+.head-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.head-card:hover .head-photo-img {
+  transform: scale(1.04);
+}
+
+.head-role-pill {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #222222;
+  color: #888888;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.6rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "Hanken Grotesk", sans-serif;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* Head Meta & Info */
+.head-meta {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.head-name {
+  color: #ffffff;
+  font-family: "enigma", serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.head-role {
+  color: #717171;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+  margin-bottom: 1.1rem;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* Socials Bar */
+.head-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #141414;
+}
+
+.head-social-link {
+  width: 34px;
+  height: 34px;
+  background: #000000;
+  border: 1px solid #222222;
+  color: #717171;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.head-social-link:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.head-social-link.disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.head-social-link.disabled:hover {
+  background: #000000;
+  border-color: #222222;
+  color: #717171;
+  transform: none;
+}
+
+/* ================= RESPONSIVE QUERIES ================= */
+@media screen and (max-width: 992px) {
+  .about-page {
+    padding: 12vh 4vw 8vh 4vw;
+    width: 100vw;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-sidebar {
+    position: static;
+  }
+
+  .about-domains-list {
+    flex-direction: row;
+    overflow-x: auto;
+    max-height: none;
+  }
+
+  .domain-tab {
+    border-bottom: none;
+    border-right: 1px solid #141414;
+    white-space: nowrap;
+    padding: 0.75rem 1.1rem;
+    width: auto;
+  }
+
+  .domain-tab.active {
+    border-left: none;
+    border-bottom: 2px solid #ffffff;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .heads-grid {
+    grid-template-columns: 1fr;
+  }
+}

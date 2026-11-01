@@ -1,0 +1,164 @@
+.accommodation {
+  background-color: #000000;
+  color: #717171;
+  font-size: 1vw;
+  height: auto;
+  padding: 15vh 2vw 2vh 2vw;
+  position: relative;
+  width: 92vw;
+}
+
+.accommodation-title {
+  color: #ffffff;
+  font-size: 4vw;
+  font-weight: 300;
+  width: 100%;
+}
+
+.avail-accommodation-btn {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  color: #000000;
+  font-size: 2vw;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 2.5vh 5vw;
+  margin: 4vh auto;
+  display: block;
+  transform: skewX(-10deg);
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.avail-accommodation-btn:hover {
+  background-color: #ff0000;
+  border: 2px solid #ff0000;
+  color: #ffffff;
+}
+
+.general-info-title {
+  color: #ffffff;
+  font-size: 3vw;
+  font-weight: 300;
+  padding-top: 4vh;
+}
+
+.general-info-desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.general-info-desc-subtitle {
+  color: #ffffff;
+  font-size: 1.6vw;
+  font-weight: 300;
+}
+
+.general-info-desc p {
+  font-weight: 400;
+  padding-bottom: 2.5vh;
+  padding-top: 0.5vh;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  padding: 5vh 0;
+}
+
+.accomodation-form-container {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.accomodation-form-title {
+  color: #ffffff;
+  font-size: 3vw;
+  font-weight: 300;
+  padding-top: 4vh;
+}
+
+.faq-title {
+  color: #ffffff;
+  font-size: 3vw;
+  font-weight: 300;
+  padding-bottom: 2.5vh;
+  padding-top: 4vh;
+}
+
+.faq-cont {
+  border-top: 0.1vh solid #676767;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  height: auto;
+  padding: 6vh 2vh;
+  width: 100%;
+}
+
+.faq-top {
+  color: #ffffff;
+  display: flex;
+  gap: 1%;
+}
+
+.faq-answer {
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+}
+
+@media screen and (max-width: 992px) {
+  .accommodation {
+    font-size: 0.98rem;
+    line-height: 1.65;
+    padding: calc(62px + 6vh) 5vw 3rem;
+    width: 100%;
+  }
+
+  .accommodation-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1;
+  }
+
+  .avail-accommodation-btn {
+    font-size: 0.9rem;
+    margin: 2rem auto;
+    padding: 0.9rem 1.4rem;
+    text-align: center;
+  }
+
+  .general-info-title {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+    padding-top: 2rem;
+  }
+
+  .general-info-desc-subtitle {
+    font-size: 1rem;
+    padding-top: 1.4rem;
+  }
+
+  .general-info-desc p {
+    padding-top: 0.6vh;
+  }
+
+  .faq-title {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+    padding: 2rem 0 1rem;
+  }
+
+  .faq-cont {
+    gap: 0.8rem;
+    padding: 1.4rem 0;
+  }
+
+  .map {
+    padding: 2rem 0;
+  }
+
+  .map iframe {
+    height: min(82vw, 23rem);
+    max-width: 100%;
+    width: 100%;
+  }
+}

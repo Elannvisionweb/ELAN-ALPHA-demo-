@@ -1,0 +1,206 @@
+/* Carnival top navigation — matches the Figma landing band */
+
+.cvnav {
+  align-items: center;
+  background: linear-gradient(180deg, #440915 0%, #36060f 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 3.2vw;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 900;
+  height: clamp(74px, 5.8vw, 98px);
+}
+
+.cvnav-logo {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.cvnav-logo img {
+  display: block;
+  height: clamp(48px, 4.0vw, 74px);
+  object-fit: contain;
+  width: auto;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.cvnav-logo:hover img {
+  filter: drop-shadow(0 0 12px rgba(244, 180, 83, 0.45));
+  transform: scale(1.02);
+}
+
+.cvnav-links {
+  align-items: center;
+  display: flex;
+  gap: clamp(1.3rem, 2.3vw, 2.9vw);
+}
+
+.cvnav-link {
+  align-items: center;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  padding: 0.35rem 0;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.cvnav-img-link {
+  display: block;
+  height: clamp(23px, 1.9vw, 36px);
+  object-fit: contain;
+  width: auto;
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.2s ease;
+}
+
+.cvnav-link:hover .cvnav-img-link {
+  filter: drop-shadow(0 0 12px rgba(244, 180, 83, 0.7)) brightness(1.15);
+  transform: translateY(-2px);
+}
+
+/* ---------- Drawer ---------- */
+.cvnav-drawer {
+  background: rgba(20, 2, 8, 0.82);
+  backdrop-filter: blur(5px);
+  inset: 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+.cvnav-drawer-inner {
+  background: linear-gradient(180deg, #4a0a17, #2a060d);
+  border-left: 2px solid var(--cv-gold-dk);
+  box-shadow: -18px 0 48px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: auto;
+  max-width: 92vw;
+  padding: 5rem 3rem 2.5rem;
+  position: relative;
+  width: 420px;
+}
+
+.cvnav-close {
+  background: none;
+  border: 1px solid rgba(230, 198, 175, 0.4);
+  color: var(--cv-cream);
+  cursor: pointer;
+  font-size: 0.95rem;
+  height: 2.3rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 1.6rem;
+  transition: background 0.18s ease, color 0.18s ease;
+  width: 2.3rem;
+}
+
+.cvnav-close:hover {
+  background: var(--cv-gold);
+  border-color: var(--cv-gold);
+  color: #3b1403;
+}
+
+.cvnav-drawer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cvnav-drawer-list li {
+  /* `backwards`, not `both`: the item falls back to its normal visible state
+     if the animation never runs (reduced motion, background tab). */
+  animation: cvDrawerIn 0.32s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  border-bottom: 1px dashed rgba(230, 198, 175, 0.22);
+}
+
+.cvnav-drawer-list button {
+  background: none;
+  border: 0;
+  color: var(--cv-cream);
+  cursor: pointer;
+  display: block;
+  font-family: var(--cv-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  padding: 1.05rem 0;
+  text-align: left;
+  text-transform: uppercase;
+  transition: color 0.18s ease, transform 0.18s ease;
+  width: 100%;
+}
+
+.cvnav-drawer-list button:hover {
+  color: var(--cv-gold);
+  transform: translateX(8px);
+}
+
+.cvnav-drawer-foot {
+  color: rgba(230, 198, 175, 0.5);
+  font-family: var(--cv-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  margin-top: auto;
+  text-transform: uppercase;
+}
+
+@keyframes cvDrawerIn {
+  from {
+    opacity: 0;
+    transform: translateX(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .cvnav-links .cvnav-link:not(.cvnav-menu-btn) {
+    display: none;
+  }
+  .cvnav {
+    height: 62px;
+    padding: 0 max(1rem, 5vw);
+  }
+  .cvnav-logo img {
+    height: 38px;
+  }
+  .cvnav-img-menu {
+    height: 22px;
+  }
+  .cvnav-drawer-inner {
+    max-width: 100%;
+    padding: 4.8rem 1.5rem 1.5rem;
+    width: min(100%, 25rem);
+  }
+  .cvnav-drawer-list button {
+    font-size: clamp(1.25rem, 7vw, 1.55rem);
+    padding: 0.9rem 0;
+  }
+  .cvnav-drawer-foot {
+    font-size: 0.6rem;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .cvnav-link,
+  .cvnav-close,
+  .cvnav-drawer-list button {
+    cursor: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cvnav-drawer-list li {
+    animation: none;
+  }
+}
