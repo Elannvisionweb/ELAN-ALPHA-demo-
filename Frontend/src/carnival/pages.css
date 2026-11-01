@@ -1100,11 +1100,24 @@
   .cv-page { padding-bottom: 3.5rem; }
   .cv-page-head { padding: calc(62px + 4.5svh) 5vw 2.25rem; }
   .cv-eyebrow { font-size: 0.67rem; letter-spacing: 0.2em; margin-bottom: 0.75rem; }
-  .cv-page-title { font-size: clamp(2.15rem, 12vw, 3.35rem); line-height: 0.98; }
+  .cv-page-title {
+    font-size: clamp(1.45rem, 6.6vw, 2.3rem);
+    line-height: 1.05;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
   .cv-page-lede { font-size: 0.98rem; line-height: 1.6; margin-top: 1.15rem; }
   .cv-rule { margin-top: 1.45rem; }
   .cv-section { padding: 2.6rem 5vw 0; }
-  .cv-section-title { font-size: clamp(1.35rem, 7.5vw, 2rem); gap: 0.6rem; margin-bottom: 1.2rem; }
+  .cv-section-title {
+    font-size: clamp(1.15rem, 5.2vw, 1.65rem);
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
   .cv-grid { gap: 1.35rem; grid-template-columns: 1fr; }
   .cv-ticket-inner { padding: 1.2rem 1.1rem; }
   .cv-poster { height: clamp(10rem, 54vw, 14rem); }
@@ -1113,9 +1126,20 @@
   .cv-card-text { font-size: 0.92rem; }
   .cv-bullets { font-size: 0.85rem; }
   .cv-btn { font-size: 0.76rem; line-height: 1.25; padding: 0.68rem 0.9rem; }
-  .cv-strip { gap: 0.9rem; grid-template-columns: 1fr; margin: 0 5vw 2rem; padding: 1.15rem; }
-  .cv-strip > div { border-bottom: 1px dashed rgba(244, 180, 83, 0.24); padding-bottom: 0.8rem; }
-  .cv-strip > div:last-child { border-bottom: 0; padding-bottom: 0; }
+  .cv-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 0 4vw 2rem;
+    padding: 1rem 0.6rem;
+    text-align: center;
+  }
+  .cv-strip > div {
+    border-bottom: 0;
+    border-right: 1px dashed rgba(244, 180, 83, 0.24);
+    padding: 0 0.3rem;
+  }
+  .cv-strip > div:last-child { border-right: 0; padding-bottom: 0; }
   .cv-head-links { flex-wrap: wrap; gap: 0.45rem 0.7rem; }
   .cv-foot { margin-top: 3.2rem; padding: 1.4rem 5vw 0; }
   .cv-foot p { font-size: 0.58rem; letter-spacing: 0.13em; line-height: 1.7; }
