@@ -162,9 +162,9 @@
   }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1024px), screen and (orientation: portrait) {
   .cvnav-links .cvnav-link:not(.cvnav-menu-btn) {
-    display: none;
+    display: none !important;
   }
   .cvnav {
     height: 62px;
@@ -191,7 +191,7 @@
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1025px) and (orientation: landscape) {
   .cvnav-link,
   .cvnav-close,
   .cvnav-drawer-list button {

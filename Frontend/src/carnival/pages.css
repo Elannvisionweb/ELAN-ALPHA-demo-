@@ -1087,15 +1087,15 @@
   top: 0.45rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) and (orientation: landscape) {
   .cv-wheel-sticky { grid-template-columns: minmax(0, 1fr) minmax(310px, 0.9fr); }
   .cv-wheel { --cv-wheel-size: min(60vw, 68vh, 620px); }
   .cv-wheel-item button { min-width: 8.3rem; }
   .cv-wheel-item img { height: 2.15rem; width: 2.15rem; }
 }
 
-@media screen and (max-width: 760px) {
-  /* Shared phone layout: every carnival route gets readable type, breathing
+@media screen and (max-width: 1024px), screen and (orientation: portrait) {
+  /* Shared phone/portrait layout: every carnival route gets readable type, breathing
      room and cards that fit the viewport before page-specific styling runs. */
   .cv-page { padding-bottom: 3.5rem; }
   .cv-page-head { padding: calc(62px + 4.5svh) 5vw 2.25rem; }
