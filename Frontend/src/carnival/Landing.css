@@ -324,27 +324,30 @@
    ========================================================================== */
 @media screen and (max-width: 1024px), screen and (orientation: portrait) {
   .cv-hero {
-    align-items: normal;
+    align-items: center;
     background-position: center top;
     background-size: cover;
-    display: block;
-    height: calc(100svh - 62px);
-    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100svh - 62px);
     margin-top: 62px;
     overflow: hidden;
-    padding: 0;
+    padding: clamp(1rem, 2.8svh, 2rem) 1rem 0;
     position: relative;
     width: 100%;
+    box-sizing: border-box;
   }
 
   /* Title & Date centered at top */
   .cv-hero-copy {
-    left: 50%;
-    margin: 0;
+    flex-shrink: 0;
+    left: auto;
+    margin: 0 auto;
     pointer-events: none;
-    position: absolute;
-    top: clamp(0.6rem, 2svh, 1.4rem);
-    transform: translateX(-50%);
+    position: relative;
+    top: auto;
+    transform: none;
     width: min(88vw, 360px);
     z-index: 10;
     text-align: center;
@@ -364,40 +367,41 @@
     width: 50%;
   }
 
-  /* Clown: anchored to bottom-left corner */
-  .cv-clown {
-    bottom: 0;
-    display: block;
-    height: clamp(140px, 24svh, 220px);
-    left: -2%;
-    margin: 0;
-    position: absolute;
-    top: auto;
-    width: auto;
-    z-index: 2;
-    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.5));
-    pointer-events: none;
-  }
-
-  /* Signpost: height-scaled so all 3 arrows and the marquee are 100% visible */
+  /* Signpost: prominent, centered centerpiece anchored to bottom */
   .cv-post {
     bottom: 0;
     display: block;
-    height: clamp(390px, 64svh, 530px);
+    height: auto;
     left: auto;
-    margin: 0;
-    position: absolute;
-    right: clamp(0px, 2vw, 14px);
+    margin: auto 0 0;
+    position: relative;
+    right: auto;
     top: auto;
-    width: auto;
+    transform: none;
+    width: min(78vw, 325px);
     z-index: 4;
-    filter: drop-shadow(0 6px 22px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 8px 26px rgba(0, 0, 0, 0.65));
   }
 
   .cv-post-img {
     display: block;
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
+  }
+
+  /* Clown: pops out from behind the signpost at bottom-left */
+  .cv-clown {
+    bottom: 0;
+    display: block;
+    height: auto;
+    left: clamp(-10px, 3vw, 30px);
+    margin: 0;
+    position: absolute;
+    top: auto;
+    width: min(44vw, 195px);
+    z-index: 2;
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.55));
+    pointer-events: none;
   }
 
   /* Live countdown placed precisely within the signpost marquee board */
@@ -406,13 +410,13 @@
     color: #efd6c0;
     display: flex;
     font-family: var(--cv-count-font, "enigma", sans-serif);
-    font-size: clamp(1.35rem, 4.2svh, 2.3rem);
+    font-size: min(8.5vw, 36px);
     height: 11.71%;
     justify-content: center;
     left: 33.79%;
     line-height: 1;
     position: absolute;
-    text-shadow: 0 0 12px rgba(255, 212, 94, 0.65);
+    text-shadow: 0 0 14px rgba(255, 212, 94, 0.7);
     top: 9.86%;
     width: 24.7%;
   }
@@ -536,23 +540,6 @@
   }
 }
 
-/* Narrowest phones (<=375px) */
-@media screen and (max-width: 375px) {
-  .cv-hero-copy {
-    width: 92vw;
-  }
-  .cv-clown {
-    left: -4%;
-    width: clamp(130px, 42vw, 160px);
-  }
-  .cv-post {
-    right: 0;
-    width: clamp(165px, 53vw, 195px);
-  }
-  .cv-days {
-    font-size: clamp(1.1rem, 5vw, 1.5rem);
-  }
-}
 
 @media screen and (min-width: 1025px) and (orientation: landscape) {
   .cv-sign--about,
